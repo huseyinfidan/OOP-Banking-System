@@ -1,0 +1,46 @@
+@startuml
+
+' Arayüz (Interface)
+interface Transferable {
+    + transfer(to: Account, amount: double): boolean
+}
+
+' Soyut Sınıf (Abstract Class)
+abstract class Account {
+    - accountNumber: String
+    - ownerName: String
+    # balance: double
+    + deposit(amount: double): void
+    + {abstract} withdraw(amount: double): void
+    + getBalance(): double
+}
+
+' Alt Sınıflar (Inheritance)
+class SavingsAccount {
+    - interestRate: double
+    + withdraw(amount: double): void
+}
+
+class CheckingAccount {
+    - overdraftLimit: double
+    + withdraw(amount: double): void
+}
+
+' Yönetici Sınıf
+class Bank {
+    - accounts: List<Account>
+    + addAccount(account: Account): void
+}
+
+' İlişkiler (Relations)
+' Account, Transferable'ı implement eder (Kesikli çizgi, boş üçgen)
+Transferable <|.. Account 
+
+' Savings ve Checking, Account'tan miras alır (Düz çizgi, boş üçgen)
+Account <|-- SavingsAccount
+Account <|-- CheckingAccount
+
+' Banka, Hesapları içerir (Aggregation - İçi boş baklava)
+Bank o-- Account
+
+@enduml
