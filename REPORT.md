@@ -44,6 +44,17 @@ The class diagram shows the structure of the classes and their relationships (In
 
 ![Class Diagram](docs/banking_diagram.puml)
 
+## 4. Implementation Details
+### Class Structure
+* **`Account` (Abstract Class):** The base class containing common attributes (`balance`, `ownerName`) and abstract methods like `withdraw()`.
+* **`Transferable` (Interface):** Defines the `transfer()` contract, ensuring loose coupling.
+* **`SavingsAccount`:** Implements strict withdrawal logic (no overdraft allowed) and includes an interest rate attribute.
+* **`CheckingAccount`:** Overrides `withdraw()` to allow overdrafts up to a specific limit.
+* **`Bank`:** Manages a collection of accounts using `List<Account>`.
+
+### Polymorphism in Action
+Polymorphism is demonstrated in the `Main` class where `Account` references hold objects of `SavingsAccount` and `CheckingAccount`. The `withdraw()` method behaves differently depending on the object type at runtime.
+
 
 
 
