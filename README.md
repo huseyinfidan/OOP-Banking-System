@@ -22,3 +22,9 @@ src
 ├── com.banking.model  # Account, Bank, Savings, Checking classes
 ├── com.banking.app    # Main application entry point
 └── com.banking.test   # JUnit test cases
+
+
+## ▶️ How to Run
+1. **Clone the repository:**
+   ```bash
+   git clone [https://github.com/huseyinfidan/OOP-Banking-System.git](https://github.com/huseyinfidan/OOP-Banking-System.git)
