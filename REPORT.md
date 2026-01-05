@@ -15,3 +15,18 @@ The main goal is to demonstrate core OOP concepts such as:
 * **Inheritance:** Creating specific account types from a base class.
 * **Polymorphism:** Overriding methods for different behaviors.
 * **Abstraction:** Using abstract classes and interfaces.
+
+## 2. Requirements Analysis
+### Functional Requirements
+The system supports the following operations:
+1. **Account Creation:** Users can open Savings or Checking accounts.
+2. **Deposit:** Adding funds to any account.
+3. **Withdraw:** Removing funds with specific validation rules (e.g., overdraft limit for Checking accounts).
+4. **Transfer:** Sending money between two accounts securely using the `Transferable` interface.
+5. **Balance Inquiry:** Viewing the current balance of an account.
+
+### Non-Functional Requirements
+* The system is built using **Java**.
+* It follows strict **OOP principles** (Inheritance, Polymorphism).
+* Code is organized into packages (`model`, `app`, `test`).
+* Unit tests are implemented using **JUnit**.
