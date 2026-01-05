@@ -55,6 +55,20 @@ The class diagram shows the structure of the classes and their relationships (In
 ### Polymorphism in Action
 Polymorphism is demonstrated in the `Main` class where `Account` references hold objects of `SavingsAccount` and `CheckingAccount`. The `withdraw()` method behaves differently depending on the object type at runtime.
 
+## 5. Testing Strategy
+The project includes a comprehensive suite of Unit Tests using **JUnit 5**.
+
+### Test Scenarios Covered:
+* **Deposit Logic:** Verifying balance increases correctly.
+* **Withdrawal Logic:** Testing sufficient funds and insufficient funds cases.
+* **Edge Cases:** Testing overdraft limits for Checking accounts.
+* **Transfer:** Verifying atomic transfer operations between accounts.
+
+All tests passed successfully, confirming the reliability of the system logic.
+
+## 6. Conclusion
+This project successfully demonstrates the core concepts of Object-Oriented Programming. By implementing a Banking System, we applied **Inheritance** to create account hierarchies, **Polymorphism** to handle transaction behaviors, and **Encapsulation** to secure data. The system is modular, testable, and scalable for future enhancements.
+
 
 
 
