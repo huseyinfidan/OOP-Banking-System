@@ -30,3 +30,43 @@ The system supports the following operations:
 * It follows strict **OOP principles** (Inheritance, Polymorphism).
 * Code is organized into packages (`model`, `app`, `test`).
 * Unit tests are implemented using **JUnit**.
+
+## 3. System Design
+The system architecture is designed based on standard UML practices.
+
+### 3.1 Use Case Diagram
+The following diagram illustrates the interaction between the Customer (Actor) and the Banking System operations.
+
+![Use Case Diagram](docs/usecase_diagram.png)
+
+### 3.2 Class Diagram
+The class diagram shows the structure of the classes and their relationships (Inheritance, Aggregation, Implementation).
+
+![Class Diagram](docs/banking_diagram.puml)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
