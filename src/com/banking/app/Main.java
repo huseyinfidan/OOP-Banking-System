@@ -34,6 +34,7 @@ public class Main {
             System.out.println("4. Para Transferi (Transfer)");
             System.out.println("5. Bakiyeyi Sorgula");
             System.out.println("6. Tüm Hesapları Listele");
+            System.out.println("7. Faiz İşlet (Sadece Birikim Hesabı)");
             System.out.println("0. Çıkış");
             System.out.print("Seçiminiz: ");
 
@@ -59,6 +60,9 @@ public class Main {
                 case 6:
                     bank.displayAllAccounts();
                     break;
+                case 7:
+                    applyInterestToAccount();
+                    break;    
                 case 0:
                     System.out.println("Sistemden çıkılıyor. İyi günler!");
                     running = false;
@@ -161,7 +165,22 @@ public class Main {
             System.out.println(">>> Mevcut Bakiye: " + acc.getBalance());
         }
     }
+ // 7. Faiz İşletme Metodu
+    private static void applyInterestToAccount() {
+        System.out.print("Faiz işletilecek hesap numarası: ");
+        String id = scanner.next();
+        Account acc = findAccountById(id);
 
+        // Hesabın türünü kontrol ediyoruz: Sadece SavingsAccount ise faiz işler!
+        if (acc instanceof SavingsAccount) {
+            ((SavingsAccount) acc).applyInterest();
+            System.out.println(">>> Güncel Bakiye: " + acc.getBalance());
+        } else {
+            System.out.println("!!! HATA: Bu işlem sadece Birikim Hesapları (Savings Account) için geçerlidir.");
+            System.out.println("Seçilen hesap türü faiz kazanmaz.");
+        }
+    }
+    
     // Yardımcı Metot: Listeden Hesap Bulma
     private static Account findAccountById(String id) {
         for (Account acc : bank.getAccounts()) {

@@ -46,4 +46,10 @@ public class SavingsAccount extends Account {
     public double getInterestRate() {
         return interestRate;
     }
+    
+    public void applyInterest() {
+        double interest = getBalance() * interestRate;
+        deposit(interest); // Faizi hesaba para olarak yatırır
+        System.out.println("Hesaba " + interest + " TL faiz eklendi.");
+    }
 }
